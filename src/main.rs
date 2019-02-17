@@ -47,7 +47,9 @@ impl ggez::event::EventHandler for MainState {
     }
 
     fn draw(&mut self, ctx: &mut ggez::Context) -> ggez::GameResult<()> {
+        graphics::clear(ctx);
         graphics::draw(ctx, &self.mesh1, na::Point2::new(self.offset, 0.0), 0.0)?;
+        graphics::present(ctx);
         Ok(())
     }
 }
